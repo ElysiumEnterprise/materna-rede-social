@@ -30,8 +30,8 @@
                         </div>
                     
                         <div class="cont-btn">
-                            <button type="button" class="btn-change-form">Mãe</button>
-                            <button type="button" class="btn-change-form" >Anunciante</button>
+                            <button type="button" class="btn-cliente">Mãe</button>
+                            <button type="button" class="btn-anunciante" >Anunciante</button>
                         </div>
                         <div class="slider-form">
                         <section class="cadastro-cliente">
@@ -55,7 +55,7 @@
                                             <img src="../img/icons/icon-calendar.png" alt="" class="img-fluid icon-input">
                                         </label>
                                         
-                                        <input type="date" name="dtCliente" id="dtCliente" min="1924-01-01" max="2024-12-30">
+                                        <input type="date" name="dtCliente" id="dtCliente" min="1924-01-01" >
                                     </div>
                                 </div>
                                 <div class="input-group">
@@ -92,24 +92,24 @@
                                 </div>
                                 <div class="regras-senha">
                                     <div class="senha-numeros">
-                                        <span class="txt-regras">Precisa conter números</span>
+                                        <span class="txt-regra-numb">Precisa conter números</span>
                                     </div>
                                     <div class="senha-uppercase">
-                                        <span class="txt-regras">Precisa conter caracteres maiúsculos</span>
+                                        <span class="txt-regra-upper">Precisa conter caracteres maiúsculos</span>
                                     </div>
                                     <div class="senha-caracteres">
-                                        <span class="txt-regras">No mínimo, 8 carecteres</span>
+                                        <span class="txt-regra-caracter">No mínimo, 8 carecteres</span>
                                     </div>
                                     <div class="senha-carcter-especiais">
-                                        <span class="txt-regras">Precisa conter caracteres speciais</span>
+                                        <span class="txt-regra-caracter-special">Precisa conter caracteres speciais</span>
                                     </div>
                                 </div>
                                 <button type="submit">Criar</button>
                             </form>
                         </section>
 
-                        <section class="form-anunciante">
-                            <form action="" method="post">
+                        <section class="cadastro-anunciante">
+                            <form action="" method="post" class="form-anunciante">
                                 <div class="input-group">
                                     <label for="nomeAnunciante">Digite seu nome<span class="errorAnunciante"></span></label>
                                     <div class="cont-input">
@@ -183,7 +183,8 @@
                 </div>
             </div>
         </div>
-  <script src="../js/validacao/validar-cad.js"></script>
-  
+  <script src="../js/validacao/validar-cad-cliente.js"></script>
+  <script src="../js/validacao/validar-cad-anunciante.js"></script>
+  <script src="../js/form-interaction/change-form.js"></script>
 </body>
 </html>

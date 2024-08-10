@@ -5,10 +5,15 @@ const nomeCliente = document.querySelector("#nomeCliente");
 const emailCliente = document.querySelector("#emailCliente");
 const senhaCliente = document.querySelector("#senhaCliente");
 const dtCliente = document.querySelector("#dtCliente");
-const tel = document.querySelector("#telCliente");
+const telCliente = document.querySelector("#telCliente");
 
-const date = new Date()
-//COnst para mostrar erros:
+//Váriaveis para controle de senha
+let passCaracter8Valid= false;
+let passNumbValid=false;
+let passCaracterSpecialValid=false;
+let passUpperValid=false;
+
+//Const para mostrar os erros no HTML atráves do span:
 
 const errorSpanCliente= document.querySelectorAll('.errorCliente');
 
@@ -40,9 +45,15 @@ formCliente.addEventListener('submit', (event)=>{
         dtCliente.focus();
         return
     }else {
-        const date = new Date(dtCliente.value).toISOString();
-        console.log(date)
         errorSpanCliente[1].innerHTML='';
+    }
+
+    if (validarData(dtCliente.valueAsDate)) {
+        errorSpanCliente[1].innerHTML="";
+    } else {
+        errorSpanCliente[1].innerHTML="(Data inválida)";
+        dtCliente.focus();
+        return;
     }
     //Validação de email
     if (emailCliente.value==='') {
@@ -53,7 +64,7 @@ formCliente.addEventListener('submit', (event)=>{
         errorSpanCliente[2].innerHTML="";
     }
     if (validarEmail(emailCliente.value)) {
-        errorSpanCliente[2].innerHTML="Email inválido";
+        errorSpanCliente[2].innerHTML="(Email inválido)";
         emailCliente.focus();
         return;
     }else{
@@ -61,8 +72,30 @@ formCliente.addEventListener('submit', (event)=>{
     }
 
     //Verficação de telefone
+    if (telCliente.value==='') {
+        errorSpanCliente[3].innerHTML='(Preencha esse campo!)';
+        telCliente.focus();
+        return;
+    } else {
+        errorSpanCliente[3].innerHTML='';
+    }
 
+    if (validarTel(telCliente.value)) {
+        errorSpanCliente[3].innerHTML="(Tipo de número inválido!)"
+        telCliente.focus();
+        return;
+    } else {
+        
+    }
     //Verificação de Senha:
+    if (!passCaracter8Valid && !passCaracterSpecialValid && !passNumbValid &&!passUpperValid) {
+        errorSpanCliente[4].innerHTML="(A senha não contem os requisitos mínimos!)";
+        senhaCliente.focus()
+        return;
+    } else {
+        errorSpanCliente.innerHTML='';
+    }
+    
     formCliente.submit()
 })
 
@@ -81,6 +114,20 @@ function validarEmail(email) {
     }
 }
 
+//Função de verificar o tel
+
+function validarTel(tel) {
+    const telRegex = new RegExp(
+        //Verificar pelo padrão (DDD) XXXXX-YYYY
+        /^\(\d{2}\)\d{4,5}-\d{4}$/
+    )
+    if (telRegex.test(tel)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 //Abrir div de verificar senha
 
 senhaCliente.addEventListener('focus', function(){
@@ -92,49 +139,68 @@ senhaCliente.addEventListener('blur', function(){
     regrasDiv.classList.remove('active')
 })
 
-//Função de vericar se a senha contem caracteres
-function validarSenha(senhaCliente) {
-   
-    
-}
+
 senhaCliente.addEventListener('keyup', function(){
     
 
-    const regra_uppercase = document.querySelector('.senha-uppercase');
-    const regra_caracter = document.querySelector('.senha-caracteres');
-    const regra_carcter_special = document.querySelector('.senha-carcter-especiais');
-    const regra_numero = document.querySelector('.senha-numeros');
+    const regra_uppercase = document.querySelector('.txt-regra-upper');
+    const regra_caracter = document.querySelector('.txt-regra-caracter');
+    const regra_carcter_special = document.querySelector('.txt-regra-caracter-special');
+    const regra_numero = document.querySelector('.txt-regra-numb');
     //Verificar Se tem carctere maiúscula
     if (/[A-Z]/.test(senhaCliente.value)) {
         regra_uppercase.classList.add('active')
-        
+        passUpperValid=true;
     }else{
         regra_uppercase.classList.remove('active')
-        
+        passUpperValid=false;
     }
     //Verfiricar se a senha tem no mínimo 8 caracteres
     if(senhaCliente.value.length>=8){
         regra_caracter.classList.add('active')
-        
+        passCaracter8Valid=true;
     }else{
         regra_caracter.classList.remove('active');
-        
+        passCaracter8Valid=false
     }
     //Verficar se a senha tem números
     if (/[0-9]/.test(senhaCliente.value)) {
         regra_numero.classList.add('active');
-        
+        passNumbValid=true;
     }else{
         regra_numero.classList.remove('active');
-        
+        passNumbValid=false;
     }
     //Verificar se a senha tem a caracteres especiais
     if(/[^A-Za-z0-9]/.test(senhaCliente.value)){
         regra_carcter_special.classList.add('active');
-        senhaCaracterSpecial=true;
+        passCaracterSpecialValid=true
     }else{
         regra_carcter_special.classList.remove('active');
-        senhaCaracterSpecial=false;
+        passCaracterSpecialValid=false;
     }
 
 })
+
+function validarData(dataNasc) {
+
+    //Váriaveis para pegar a data atual da máquina para verificação do input de data
+    const date = new Date()
+
+    const diaAtual = date.getUTCDay()
+    const mesAtual = date.getUTCMonth() +1;
+    const anoAtual = date.getUTCFullYear();
+
+    //Variáveis para pegar separadamente o dia, mês e ano de aniversário
+    const diaNasc = dataNasc.getUTCDay();
+    const mesNasc = dataNasc.getUTCMonth() +1;
+    const anoNasc = dataNasc.getUTCFullYear();
+
+    //Verficação se a data de nascimento é superior que a data atual
+
+    if (diaNasc>=diaAtual && mesNasc>=mesAtual && anoNasc>=anoAtual) {
+        return false
+    }else {
+        return true
+    }
+}
