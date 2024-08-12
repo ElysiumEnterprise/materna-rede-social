@@ -15,13 +15,13 @@ buttonAnunciante.classList.remove('active')
 buttonCliente.addEventListener('click', function () {
     buttonCliente.classList.add('active');
     buttonAnunciante.classList.remove('active')
-    formMae.classList.add('active')
-    formAnunciante.remove('active')
+    formMae.style="display: flex";
+    formAnun.style='display:none';
 })
 
 buttonAnunciante.addEventListener('click', function(){
     buttonAnunciante.classList.add('active')
     buttonCliente.classList.remove('active');
-    formMae.classList.remove('active')
-    formAnunciante.add('active')
+    formMae.style="display: none";
+    formAnun.style='display:flex';
 })
