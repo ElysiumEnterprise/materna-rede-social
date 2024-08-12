@@ -22,7 +22,7 @@ const errorSpanAnunciante= document.querySelectorAll('.errorCliente');
 
 formAnunciante.addEventListener('submit', (event)=>{
     event.preventDefault();
-    
+    alert('estou aqui')
     //Verificação de nome:
     if (nomeAnunciante.value==='') {
         errorSpanAnunciante[0].innerHTML="(Preencha esse campo)"
@@ -89,7 +89,7 @@ formAnunciante.addEventListener('submit', (event)=>{
         
     }
     //Verificação de Senha:
-    if (!Anunciante && !passCaracterSpecialValidAnunciante && !passNumbValidAnuciante &&!passUpperValidAnunciante) {
+    if (!passCaracter8ValidAnunciante && !passCaracterSpecialValidAnunciante && !passNumbValidAnuciante &&!passUpperValidAnunciante) {
         errorSpanAnunciante[4].innerHTML="(A senha não contem os requisitos mínimos!)";
         senhaAnunciante.focus()
         return;
@@ -97,7 +97,7 @@ formAnunciante.addEventListener('submit', (event)=>{
         errorSpanAnunciante.innerHTML='';
     }
     
-    formCliente.submit()
+    formAnunciante.submit()
 })
 
 //Função de validação de email

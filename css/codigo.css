@@ -1,11 +1,11 @@
 @font-face{
     font-family: "Fredoka";
-    src: url('../fonts/Fredoka-VariableFont_wdth\,wght.ttf');
+    src: url('../fonts/Fredoka-VariableFont_wdthwght.ttf');
 }
 
 @font-face{
     font-family: "Inter";
-    src: url('../fonts/Inter-VariableFont_opsz\,wght.ttf');
+    src: url('../fonts/Inter-VariableFont_opszwght.ttf');
 }
 
 *{
@@ -60,6 +60,7 @@ main{
 }
 
 .cod{
+    font-family: 'Fredoka';
     font-size: 16px;
     letter-spacing: normal;
 }
@@ -70,14 +71,26 @@ main{
 
 .input-group {
     position: relative;
+    flex-direction: column;
+    width: 100%;
     height: 70px;
     line-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.input-group .cont-erro{
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+}
 
+.input-group .error{
+    color:#bf093d;
+}
 input {
+    font-family: 'Fredoka';
     width: 90%;
 }
 
@@ -102,14 +115,16 @@ input:focus, input:valid{
 }
 
 .link-cod{
+    
     margin-top: 6px;
     text-align: center;
 }
 
 .reenvio-cod{
+    font-family: 'Fredoka';
     text-decoration: none;
     color: #003366;
-    font-family: 'Inter';
+   
     font-weight: 450;
     font-size: 15px;
 }
@@ -136,6 +151,7 @@ input:focus, input:valid{
     font-weight: 550;
     font-size: 14px;
     cursor: pointer;
+    font-family: 'Fredoka';
 }
 
 .btn-cancel{
@@ -148,7 +164,7 @@ input:focus, input:valid{
     font-size: 14px;
     cursor: pointer;
     color: #868586;
-
+    font-family: 'Fredoka';
 }
 
 .btn-confirm:hover{

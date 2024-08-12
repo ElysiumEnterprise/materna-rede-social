@@ -15,6 +15,11 @@ body{
     font-family: "Fredoka";
 
 }
+
+.container-fluid{
+    margin: 0;
+    padding: 0;
+}
 .container-conteudo{
     display: flex;
     min-width: 100%;
@@ -75,7 +80,7 @@ body{
     align-items: center;
     margin-bottom: 20px;
 }
-.cont-btn button{
+.cont-btn a{
     min-width: 20%;
     padding: 10px;
     border: none;
@@ -84,15 +89,19 @@ body{
     color: white;
     font-size: 1rem;
     cursor: pointer;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     margin-top: 20px;
 }
-.cont-btn button:hover{
+.cont-btn a:hover{
    
     background-color: #ff6c91;
 
 }
 
-.cont-btn button.active{
+.cont-btn a.active{
     background-color: #F26699;
 }
 
@@ -206,7 +215,4 @@ form button{
     align-items: center;
     
     text-align: center;
-}
-.box-form .form-anunciante{
-    display: none;
 }

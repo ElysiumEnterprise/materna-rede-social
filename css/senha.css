@@ -1,11 +1,11 @@
 @font-face{
     font-family: "Fredoka";
-    src: url('../fonts/Fredoka-VariableFont_wdth\,wght.ttf');
+    src: url('../fonts/Fredoka-VariableFont_wdth,wght.ttf');
 }
 
 @font-face{
     font-family: "Inter";
-    src: url('../fonts/Inter-VariableFont_opsz\,wght.ttf');
+    src: url('../fonts/Inter-VariableFont_opsz,wght.ttf');
 }
 
 *{
@@ -15,6 +15,7 @@
 }
 
 body{
+    font-family: 'Fredoka';
     background-color: #F26699;
 }
 
@@ -53,9 +54,9 @@ main{
     height: 340px;
 }
 
-.txt{
+.txt p{
     margin-top: 20px;
-    font-family: 'Inter';
+    font-family: "Fredoka";
 }
 
 .email{
@@ -68,15 +69,30 @@ main{
 
 .input-group {
     position: relative;
+    flex-direction: column;
+    width: 100%;
     height: 70px;
     line-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+}
+
+.input-group .cont-erro{
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    align-items: start;
+}
+
+.input-group .error{
+    color:#bf093d;
 }
 
 input {
     width: 90%;
+    font-family: 'Fredoka';
 }
 
 .animated-input {
@@ -92,6 +108,21 @@ input {
     text-align: center;
     margin-top: 14px;
     font-family: 'Inter';
+}
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+form section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .btn{
@@ -111,6 +142,7 @@ input {
     color: #fff;
     font-weight: 550;
     font-size: 14px;
+    font-family: 'Fredoka';
     cursor: pointer;
 }
 
@@ -123,6 +155,7 @@ input {
     font-weight: 550;
     font-size: 14px;
     cursor: pointer;
+    font-family: 'Fredoka';
     color: #868586;
 
 }

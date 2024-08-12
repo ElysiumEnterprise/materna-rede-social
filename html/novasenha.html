@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esqueci a senha</title>
-    <link rel="stylesheet" href="css/novasenha.css">
+    <link rel="stylesheet" href="../css/novasenha.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="images/img-container.png" alt="Imagem logo materna" class="img-logo">
+                <img src="../img/logo/img-container.png" alt="Imagem logo materna" class="img-logo">
             </div>
         </nav>
     </header>
@@ -32,29 +32,44 @@
                 </div>
 
                 <div class="card-form">
-                    <form>
+                    <form action="" method="post" class="form-confirm-senha">
                         <div class="input-group">
-                            <input type="password" class="animated-input" placeholder="Crie uma nova senha" required>
+                            <div class="cont-erro">
+                                <span class="erorrSenha error"></span>
+                            </div>
+                            <input type="password" id="novasenha" name="novasenha" class="animated-input" placeholder="Crie uma nova senha">
+                            <div class="regras-senha">
+                                <div class="senha-numeros">
+                                    <span class="txt-regra-numb">Precisa conter números</span>
+                                </div>
+                                <div class="senha-uppercase">
+                                    <span class="txt-regra-upper">Precisa conter caracteres maiúsculos</span>
+                                </div>
+                                <div class="senha-caracteres">
+                                    <span class="txt-regra-caracter">No mínimo, 8 carecteres</span>
+                                </div>
+                                <div class="senha-carcter-especiais">
+                                    <span class="txt-regra-caracter-special">Precisa conter caracteres speciais</span>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="input-group">
-                            <input type="password" class="animated-input" placeholder="Confirme a senha" required>
+                            <div class="cont-erro">
+                                <span class="errorSenha error"></span>
+                            </div>
+                            <input type="password" id="confirm-senha" name="confirm-senha" class="animated-input" placeholder="Confirme a senha">
+                        </div>
+                        <div class="link">
+                            <a href="#" class="link-senha">Não consegue redefinir sua senha?</a>
+                        </div>
+                        <div class="btn">
+                            <button type="submit" class="btn-confirm">Confirmar</button>
+                            <button type="button" class="btn-cancel">Cancelar</button>
                         </div>
                     </form>
                 </div>
 
-                <div class="link">
-                    <a href="#" class="link-senha">Não consegue redefinir sua senha?</a>
-                </div>
-
-                <div class="btn">
-                    <button class="btn-confirm">Confirmar</button>
-                    <button class="btn-cancel">Cancelar</button>
-                </div>
-
-
-                
-                
             </div>
 
         </div>

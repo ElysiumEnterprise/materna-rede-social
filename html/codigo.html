@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esqueci a senha</title>
-    <link rel="stylesheet" href="css/codigo.css">
+    <link rel="stylesheet" href="../css/codigo.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="images/img-container.png" alt="Imagem logo materna" class="img-logo">
+                <img src="../img/logo/img-container.png" alt="Imagem logo materna" class="img-logo">
             </div>
         </nav>
     </header>
@@ -31,28 +31,29 @@
                 </div>
 
                 <div class="card-form">
-                    <form>
+                    <form action="" method="post" class="form-codigo">
                         <div class="input-group">
-                            <input type="text" class="animated-input" placeholder="XXX-XXX-XX" required>
+                            <div class="cont-error">
+                                <span class="errorCodigo"></span>
+                            </div>
+                            
+                            <input type="text" id="codigo" name="codigo" class="animated-input" placeholder="XXX-XXX-XX" >
+                        </div>
+                        <div class="link-cod">
+                            <a href="#" class="reenvio-cod">Reenviar código</a>
+                        </div>
+                        <div class="btn">
+                            <button type="submit" class="btn-confirm">Confirmar</button>
+                            <button class="btn-cancel">Cancelar</button>
                         </div>
                     </form>
                 </div>
 
-                <div class="link-cod">
-                    <a href="#" class="reenvio-cod">Reenviar código</a>
-                </div>
-
-                <div class="btn">
-                    <button class="btn-confirm">Confirmar</button>
-                    <button class="btn-cancel">Cancelar</button>
-                </div>
-
-
-                
                 
             </div>
 
         </div>
     </main>
+    <script src="../js/senha/validar-codigo.js"></script>
 </body>
 </html>

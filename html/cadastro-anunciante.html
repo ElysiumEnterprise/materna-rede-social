@@ -30,84 +30,12 @@
                         </div>
                     
                         <div class="cont-btn">
-                            <button type="button" class="btn-cliente">Mãe</button>
-                            <button type="button" class="btn-anunciante" >Anunciante</button>
+                            <div class="cont-btn">
+                                <a href="./cadastro-cliente.html">Mãe</a>
+                                <a href="./cadastro-anunciante.html" class="active">Anunciante</a>
+                            </div>
                         </div>
                         <div class="slider-form">
-                        <section class="cadastro-cliente">
-                            <form action="" method="post" class="form-cliente">
-                                <div class="input-group">
-                                    
-                                    <label for="nomeCliente">Digite seu nome <span class="errorCliente"></span></label>
-                                    <div class="cont-input">
-                                        <label class="label-icon" for="nomeCliente">
-                                            <img src="../img/icons/icon-user.png" alt="" class="img-fluid icon-input">
-                                        </label>
-                                        
-                                        <input type="text" name="nomeCliente" id="nomeCliente">
-                                    </div>
-                                
-                                </div>
-                                <div class="input-group">
-                                    <label for="dtCliente">Digite sua data de dascimento<span class="errorCliente"></span></label>
-                                    <div class="cont-input">
-                                        <label class="label-icon" for="dtCliente">
-                                            <img src="../img/icons/icon-calendar.png" alt="" class="img-fluid icon-input">
-                                        </label>
-                                        
-                                        <input type="date" name="dtCliente" id="dtCliente" min="1924-01-01" >
-                                    </div>
-                                </div>
-                                <div class="input-group">
-                                    <label for="emailCliente">Digite seu email<span class="errorCliente"></span></label>
-                                    <div class="cont-input">
-                                        <label class="label-icon" for="emailCliente">
-                                            <img src="../img/icons/icon-email.png" alt="" class="img-fluid icon-input">
-                                        </label>
-                                        
-                                        <input type="email" name="emailCliente" id="emailCliente">
-                                    </div>
-                                </div>
-                                <div class="input-group">
-                                    <label for="telCliente">Digite seu telefone<span class="errorCliente"></span></label>
-                                    <div class="cont-input">
-                                        <label class="label-icon" for="telCliente">
-                                            <img src="../img/icons/icon-tel.png" alt="" class="img-fluid icon-input">
-                                        </label>
-                                        
-                                        <input type="tel" name="telCliente" id="telCliente">
-                                    </div>
-                                </div>
-                                <div class="input-group">
-                                    <label for="senhaCliente">Crie uma senha<span class="errorCliente"></span></label>
-                                    <div class="cont-input">
-                                        <label class="label-icon" for="senhaCliente">
-                                            <img src="../img/icons/icon-password.png" alt="" class="img-fluid icon-input">
-                                        </label>
-                                        
-                                        <input type="password"  name="senhaCliente" id="senhaCliente">
-                                        
-                                    </div>
-                                    
-                                </div>
-                                <div class="regras-senha">
-                                    <div class="senha-numeros">
-                                        <span class="txt-regra-numb">Precisa conter números</span>
-                                    </div>
-                                    <div class="senha-uppercase">
-                                        <span class="txt-regra-upper">Precisa conter caracteres maiúsculos</span>
-                                    </div>
-                                    <div class="senha-caracteres">
-                                        <span class="txt-regra-caracter">No mínimo, 8 carecteres</span>
-                                    </div>
-                                    <div class="senha-carcter-especiais">
-                                        <span class="txt-regra-caracter-special">Precisa conter caracteres speciais</span>
-                                    </div>
-                                </div>
-                                <button type="submit">Criar</button>
-                            </form>
-                        </section>
-
                         <section class="cadastro-anunciante">
                             <form action="" method="post" class="form-anunciante">
                                 <div class="input-group">
@@ -117,7 +45,7 @@
                                             <img src="../img/icons/icon-user.png" alt="" class="img-fluid icon-input">
                                         </label>
                                         
-                                        <input type="text" name="nomeAnuciante" id="nomeAnunciante" required>
+                                        <input type="text" name="nomeAnuciante" id="nomeAnunciante">
                                     </div>
                                 </div>
                                 <div class="input-group">
@@ -127,7 +55,7 @@
                                             <img src="../img/icons/icon-calendar.png" alt="" class="img-fluid icon-input">
                                         </label>
                                         
-                                        <input type="date" name="dtAnunciante" id="dtAnunciante" required>
+                                        <input type="date" name="dtAnunciante" id="dtAnunciante">
                                     </div>
                                 </div>
                                 <div class="input-group">
@@ -137,7 +65,7 @@
                                             <img src="../img/icons/icon-user.png" alt="" class="img-fluid icon-input">
                                         </label>
                                         
-                                        <input type="text" name="cnpjAnuciante" id="cnpjAnunciante" required>
+                                        <input type="text" name="cnpjAnuciante" id="cnpjAnunciante">
                                     </div>
                                 </div>
                                 <div class="input-group">
@@ -147,7 +75,7 @@
                                             <img src="../img/icons/icon-email.png" alt="" class="img-fluid icon-input">
                                         </label>
                                         
-                                        <input type="email" name="emailAnunciante" id="emailAnunciante" required>
+                                        <input type="email" name="emailAnunciante" id="emailAnunciante">
                                     </div>
                                 </div>
                                 <div class="input-group">
@@ -157,7 +85,7 @@
                                             <img src="../img/icons/icon-tel.png" alt="" class="img-fluid icon-input">
                                         </label>
                                         
-                                        <input type="tel" name="telAnunciante" id="telAnunciante" required>
+                                        <input type="tel" name="telAnunciante" id="telAnunciante">
                                     </div>
                                 </div>
                                 <div class="input-group">
@@ -167,7 +95,7 @@
                                             <img src="../img/icons/icon-password.png" alt="" class="img-fluid icon-input">
                                         </label>
                                         
-                                        <input type="password"  name="senhaAnunciante" id="senhaAnunciante" required>
+                                        <input type="password"  name="senhaAnunciante" id="senhaAnunciante">
                                     </div>
                                 </div>
                                 <div class="regras-senha">
@@ -197,8 +125,7 @@
                 </div>
             </div>
         </div>
-  <script src="../js/validacao/validar-cad-cliente.js"></script>
   <script src="../js/validacao/validar-cad-anunciante.js"></script>
-  <script src="../js/form-interaction/change-form.js"></script>
+
 </body>
 </html>

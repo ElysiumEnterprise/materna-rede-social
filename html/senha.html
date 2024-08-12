@@ -33,20 +33,28 @@
 
                 
                 <div class="card-form">
-                    <form>
-                        <div class="input-group">
-                            <input type="text" class="animated-input" placeholder="Digite seu email" required>
-                        </div>
+                    <form action="" method="post"class="form-email">
+                        <section class="section-email">
+                            <div class="input-group">
+                                <div class="cont-error">
+                                    <span class="errorEmail error"></span>
+                                </div>
+                                
+                                <input type="email" id="email" name="email" class="animated-input" placeholder="Digite seu email">
+                                <div class="btn">
+                                    <button type="submit" class="btn-cod envio-email">Enviar código</button>
+                                    <button type="button" class="btn-cancel">Cancelar</button>
+                                </div>
+                            </div>
+                        </section>
                     </form>
+                    
                 </div>
-                
-                <div class="btn">
-                    <button class="btn-cod">Enviar código</button>
-                    <button class="btn-cancel">Cancelar</button>
-                </div>
+            
             </div>
 
         </div>
     </main>
+    <script src="../js/senha/validar-email.js"></script>
 </body>
 </html>
